@@ -1,6 +1,7 @@
 {
   fenix,
   pkgs,
+  zebra,
 }:
 ## TODO: This conditional is a workaround for nix-community/fenix#178. Use the `else`
 ##       unconditionally once that is fixed.
@@ -22,6 +23,6 @@ in
   ]
 else
   fenix.packages.${pkgs.system}.fromToolchainFile {
-    file = ../rust-toolchain.toml;
+    file = "${zebra}/rust-toolchain.toml";
     sha256 = "s1RPtyvDGJaX/BisLT+ifVfuhDT1nZkZ1NcK8sbwELM=";
   }

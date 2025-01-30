@@ -27,6 +27,7 @@
     nixpkgs,
     self,
     systems,
+    zebra,
   }: let
     ## Since they currently line up, we just use `nix-systems/default`, but see
     ## https://zebra.zfnd.org/user/supported-platforms.html for official support tiers.
@@ -47,7 +48,7 @@
     };
 
     src = nixpkgs.lib.cleanSourceWith {
-      src = ./.;
+      src = zebra;
       filter = path: type:
         nixpkgs.lib.foldr
         (e: acc: nixpkgs.lib.hasSuffix e path || acc)
@@ -58,10 +59,10 @@
     ## This sets up some common attributes that _should_ be set in the workspace Cargo.toml, but
     ## aren’t.
     workspace =
-      lib.crane.crateNameFromCargoToml {cargoToml = ./zebrad/Cargo.toml;} // {pname = "zebra";};
+      lib.crane.crateNameFromCargoToml {cargoToml = "${zebra}/zebrad/Cargo.toml";} // {pname = "zebra";};
 
     mkCraneLib = pkgs:
-      (crane.mkLib pkgs).overrideToolchain (import ./nix/rust-toolchain.nix {inherit fenix pkgs;});
+      (crane.mkLib pkgs).overrideToolchain (import ./nix/rust-toolchain.nix {inherit fenix pkgs zebra;});
 
     localPackages = {
       pkgs,
@@ -188,5 +189,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
 
     systems.url = "github:nix-systems/default";
+
+    zebra = {
+      flake = false;
+      url = "github:ZcashFoundation/zebra/v2.1.0";
+    };
   };
 }

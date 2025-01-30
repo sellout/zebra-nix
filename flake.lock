@@ -138,7 +138,8 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
-        "systems": "systems"
+        "systems": "systems",
+        "zebra": "zebra"
       }
     },
     "rust-analyzer-src": {
@@ -170,6 +171,23 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zebra": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733509736,
+        "narHash": "sha256-gdY9LPECKFYX8xxXn1X8yncSpfOD7W0FanjKBEgdvAI=",
+        "owner": "ZcashFoundation",
+        "repo": "zebra",
+        "rev": "179aaa4c4f4c39ec2a82f1489a50306955e8c98a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ZcashFoundation",
+        "ref": "v2.1.0",
+        "repo": "zebra",
         "type": "github"
       }
     }
