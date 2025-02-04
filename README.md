@@ -1,5 +1,7 @@
 # Zebra & Nix
 
+[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fsellout%2Fzebra-nix)](https://garnix.io/repo/sellout/zebra-nix)
+
 This exposes a `zebrad` package in various ways, but it’s recommended to lean on one of the higher-level modules to integrate Zebra with your system.
 
 ## modules
