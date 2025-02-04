@@ -108,6 +108,7 @@
   "components::mempool::tests::vector::mempool_failed_download_is_not_rejected"
   "components::mempool::tests::vector::mempool_failed_verification_is_rejected"
   "components::mempool::tests::vector::mempool_queue"
+  "components::mempool::tests::vector::mempool_responds_to_await_output"
   "components::mempool::tests::vector::mempool_reverifies_after_tip_change"
   "components::mempool::tests::vector::mempool_service_basic"
   "components::mempool::tests::vector::mempool_service_disabled"
